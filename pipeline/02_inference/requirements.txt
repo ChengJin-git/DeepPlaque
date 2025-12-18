@@ -1,0 +1,28 @@
+# DeepPlaque Inference Environment Dependencies
+#
+# Installation Steps:
+# 1. Install PyTorch first (choose based on your CUDA version):
+#    pip install torch torchvision
+#
+# 2. Install mmcv (based on your CUDA and PyTorch version):
+#    pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.1/index.html
+#    Or build from source: pip install mmcv==2.1.0
+#
+# 3. Install other dependencies:
+#    pip install -r requirements.txt
+
+# OpenMMLab core components
+mmengine>=0.10.0
+mmdet>=3.3.0
+
+# Image processing
+opencv-python>=4.5.0
+Pillow>=9.0.0
+pycocotools>=2.0.0
+
+# Data processing
+numpy>=1.20.0
+
+# Visualization (optional, for displaying results)
+matplotlib>=3.5.0
+

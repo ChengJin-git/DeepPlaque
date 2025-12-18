@@ -1,0 +1,53 @@
+# DeepPlaque Conda Environment
+#
+# Create environment:
+#   conda env create -f environment.yml
+#
+# Activate:
+#   conda activate deepplaque
+
+name: deepplaque
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python=3.11
+
+  # PyTorch with CUDA 12.1
+  - pytorch=2.4.0
+  - torchvision
+  - pytorch-cuda=12.1
+
+  # System libraries
+  - libgl
+  - glib
+
+  # pip packages
+  - pip
+  - pip:
+      # mmcv must be installed from OpenMMLab wheel for CUDA support
+      # Choose the correct wheel for your CUDA/PyTorch version:
+      # https://download.openmmlab.com/mmcv/dist/index.html
+      - mmcv==2.2.0 --find-links https://download.openmmlab.com/mmcv/dist/cu121/torch2.4/index.html
+
+      # OpenMMLab components
+      - mmengine==0.10.5
+      - mmdet==3.3.0
+
+      # Image processing
+      - opencv-python>=4.10.0
+      - Pillow>=10.0.0
+      - pycocotools>=2.0.0
+
+      # Data processing
+      - numpy==1.26.4
+
+      # Visualization
+      - matplotlib>=3.7.0
+
+      # Model download from HuggingFace
+      - huggingface_hub>=0.20.0
