@@ -83,8 +83,6 @@ conda activate deepplaque
 python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 ```
 
-*Alternative manual installation instructions are available in the [Wiki](wiki-link-placeholder).*
-
 ## ⚡ Usage Pipeline
 
 The DeepPlaque workflow is divided into three sequential stages.
